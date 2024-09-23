@@ -33,9 +33,9 @@ let currentUnitIndex = +localStorage.getItem("units") ?? 3;
 let newColor = "";
 let timer = null;
 
-// const START_DATE = new Date("2024-09-24:01:28:00");
-const START_DATE = new Date("2024-09-25:00:00:00");
-const TARGET_DATE = new Date("2024-11-08:00:00:00");
+// const START_DATE = new Date("2024-09-24 01:28:00");
+const START_DATE = new Date("2024-09-25 00:00:00");
+const TARGET_DATE = new Date("2024-11-08 00:00:00");
 
 const $targetDate = document.getElementById("target-date");
 const $remaining = document.getElementById("remaining");
