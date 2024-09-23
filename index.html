@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Cuanto tiempo queda?" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏳</text></svg>"
+    />
+    <title>Falta mucho?</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="dosis">
+        Cuántos
+        <p id="units" class="animate-color"></p>
+        quedan?
+        <p id="ticking-clock"></p>
+        <br /><span class="montserrat"
+          >hasta el <span id="target-date"></span>?</span
+        >
+      </h1>
+      <p id="remaining" class="dosis animate-color"></p>
+      <div id="progress-container">
+        <div id="progress-bar">
+          <span id="plane">✈️</span>
+        </div>
+        <div id="message-container"></div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>

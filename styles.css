@@ -1,0 +1,79 @@
+@media only screen and (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --pico-background-color: #f1f1f1;
+  }
+}
+:root {
+  --pico-font-family: "Montserrat";
+}
+html,
+body,
+main {
+  height: 100%;
+  max-width: 100%;
+  user-select: none;
+  overflow: hidden;
+  position: relative;
+}
+
+main {
+  width: 100vw;
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 8fr 3fr;
+  & h1,
+  p {
+    align-content: center;
+    text-align: center;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  & p {
+    display: inline;
+  }
+  & span {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+}
+
+#remaining {
+  text-wrap: nowrap;
+  font-size: 22vw;
+  z-index: 10;
+  text-shadow: 1px 1px 2px var(--pico-background-color);
+}
+
+#progress-container {
+  width: 100%;
+  height: 0.5rem;
+  text-align: center;
+}
+#progress-bar {
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#plane {
+  position: absolute;
+  top: -90%;
+  right: -30%;
+}
+#ticking-clock {
+  display: inline;
+}
+
+/* UTILITIES */
+.dosis {
+  font-family: "Dosis";
+}
+.montserrat {
+  font-family: "Montserrat";
+}
+.animate-color {
+  transition: color 0.5s ease-out;
+}
