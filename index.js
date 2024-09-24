@@ -47,6 +47,11 @@ const $root = document.querySelector(":root");
 
 $targetDate.textContent = `${TARGET_DATE.getDate()} de ${months[TARGET_DATE.getMonth()]} de ${TARGET_DATE.getFullYear()}`;
 
+const od = new Odometer({
+  el: $remaining,
+  duration: 500,
+});
+
 const colors = [
   "red",
   "pink",
