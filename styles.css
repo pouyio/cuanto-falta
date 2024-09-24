@@ -45,6 +45,7 @@ h1 {
   font-size: 22vw;
   z-index: 10;
   text-shadow: 1px 1px 2px var(--pico-background-color);
+  user-select: nome;
 }
 
 #progress-container {
