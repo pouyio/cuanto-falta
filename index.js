@@ -125,4 +125,12 @@ $progress.addEventListener("click", updateUnits);
 timer = setInterval(updateUI, 1000);
 document.addEventListener("DOMContentLoaded", () => {
   updateUnits(false);
+  if (navigator.setAppBadge) {
+    Notification.requestPermission().then(() => {
+      const today = new Date();
+      const timeLeft = TARGET_DATE - today;
+      numberOfUnreadMessages = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
+      navigator.setAppBadge(numberOfUnreadMessages);
+    });
+  }
 });
