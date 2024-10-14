@@ -62,7 +62,7 @@ h1 {
 #plane {
   position: absolute;
   top: -90%;
-  right: -30%;
+  right: -0.5rem;
 }
 #ticking-clock {
   display: inline;
