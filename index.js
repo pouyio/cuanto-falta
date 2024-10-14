@@ -70,6 +70,17 @@ const colors = [
   "slate",
 ];
 
+const updateBadge = () => {
+  if (navigator.setAppBadge) {
+    Notification.requestPermission().then(() => {
+      const today = new Date();
+      const timeLeft = TARGET_DATE - today;
+      numberOfUnreadMessages = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
+      navigator.setAppBadge(numberOfUnreadMessages);
+    });
+  }
+};
+
 const updateUI = () => {
   $units.textContent = timeUnits[currentUnitIndex];
   $units.style.color = newColor;
@@ -119,18 +130,13 @@ const updateUnits = (updateUnit) => {
 };
 
 $remaining.addEventListener("click", updateUnits);
-$units.addEventListener("click", updateUnits);
+$units.addEventListener("click", () => {
+  updateUnits(true);
+  updateBadge();
+});
 $progress.addEventListener("click", updateUnits);
 
 timer = setInterval(updateUI, 1000);
 document.addEventListener("DOMContentLoaded", () => {
   updateUnits(false);
-  if (navigator.setAppBadge) {
-    Notification.requestPermission().then(() => {
-      const today = new Date();
-      const timeLeft = TARGET_DATE - today;
-      numberOfUnreadMessages = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
-      navigator.setAppBadge(numberOfUnreadMessages);
-    });
-  }
 });
